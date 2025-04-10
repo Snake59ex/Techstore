@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: categories
+    description: Liste des catégories uniques des produits
+    columns:
+      - name: id_categorie
+        tests: [not_null, unique]
+      - name: categorie_produit
+        tests: [not_null]
+
+  - name: produits_normalises
+    description: Table produits avec référence aux catégories
+    columns:
+      - name: id_produit
+        tests: [not_null, unique]
+      - name: nom_produit
+        tests: [not_null]
+      - name: id_categorie
+        tests: [not_null]
