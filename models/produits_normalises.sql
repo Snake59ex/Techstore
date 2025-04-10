@@ -1,5 +1,5 @@
 -- models/produits_normalises.sql
-
+{{ config(materialized='table') }}
 WITH categories AS (
   SELECT
     ROW_NUMBER() OVER (ORDER BY categorie_produit) AS id_categorie,
